@@ -1,4 +1,7 @@
-
+#!/usr/bin/env python3
+# coding=utf8
+import sys
+assert sys.version_info >= (3,9), "This script requires at least Python 3.9"
 
 world = {
   "uuid": "F409FE94-5FF1-49FB-BE73-93F113186638",
@@ -856,7 +859,12 @@ def render(current_location, knowledge, corruption, moves):
 	print("Knowledge:" + str(knowledge))
 	print("Corruption:" + str(corruption))
 	print("Moves: " + str(moves))
-	print("Options:" + options["linkText"])
+	for i in options:
+		for j in i:
+			if j == "linkText":
+				k = i[j]
+				print(k)
+
 
 def get_input():
 	response = input("What do you want to do? ")
